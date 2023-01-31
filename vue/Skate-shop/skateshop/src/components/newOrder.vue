@@ -57,6 +57,7 @@
    </div>
    </div>
    </div>
+   
 </div>
 </div>
     <div class ="input" v-if="showInput"> <!--show Input Types after clicking on button-->
