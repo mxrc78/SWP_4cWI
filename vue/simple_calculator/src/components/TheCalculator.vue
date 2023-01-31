@@ -52,6 +52,7 @@ import SimpleButton from './SimpleButton.vue'
             this.number = "";
             this.operator = "/";
           },
+
           equals(){
             this.number2 = this.number;
         
@@ -74,7 +75,7 @@ import SimpleButton from './SimpleButton.vue'
               break;
           }
             this.number = this.result;
-        }
+        } 
        },
       }
   </script>

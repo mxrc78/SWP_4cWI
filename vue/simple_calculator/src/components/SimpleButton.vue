@@ -1,7 +1,6 @@
 <template>
-   
         <div class = "buttons">
-            <button @click="plus" class ="single-button" value="+" id="plus" type="text">+</button>
+            <button @click="plus" class ="single-button" id="plus" type="text">+</button>
             <button @click = "minus" class ="single-button"  id = "minus" type="text">-</button>
             <button @click="mal" class ="single-button"  id = "mal" type="text">*</button>
             <button @click="teilen" class ="single-button"  id = "teilen" type="text">/</button>
@@ -14,7 +13,6 @@
   <script>
     export default{
         emits: ['add-Calc'],
-       
         methods:{
            plus(){
                 this.$emit("add-Calc");
