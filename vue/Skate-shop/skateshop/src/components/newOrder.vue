@@ -215,6 +215,21 @@ export default {
   left: 0;
   height: 1000px;
 }
+
+@media (min-aspect-ratio: 16/9) {
+  .videoh {
+    width: 110%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .videoh {
+    width: 110%;
+    height: auto;
+  }
+}
+
 h1 {
   align-items: center;
   text-align: center;
