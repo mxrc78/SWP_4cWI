@@ -270,8 +270,9 @@ p {
   .omg {
     display: flex;
     flex-direction: column !important;
-    justify-content: space-around;
-    margin: 0 auto;
+    justify-content: center !important;
+    align-items: center !important;
+   
   }
   h1 {
     text-align: center;
