@@ -171,6 +171,7 @@ export default {
     };
   },
 
+  
   methods: {
     takeOrder() {
       this.$emit(
@@ -192,7 +193,7 @@ export default {
     amountPants() {
       if (this.enteredAmount2 < 0) {
         this.enteredAmount2 = 0;
-        alert("Amount must be higher than 0");
+        alert("Amount must be higher than 0 HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHAHAHAHHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHHAHAHAAHAHHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHHAHA");
       }
     },
     amountDecks() {
@@ -478,3 +479,4 @@ body {
   background-color:blanchedalmond;
 }
 </style>
+addOrder
