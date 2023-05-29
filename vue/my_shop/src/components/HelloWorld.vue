@@ -6,7 +6,7 @@
       <body>
   <h1>MAKKE Clothing</h1>
 
-<!--
+
 <div class="shop" v-if="hideProduct">
   <div class="panel">
     <div class="product1">
@@ -15,7 +15,7 @@
           <h3>Lederhose</h3>
         </div>
         <div class="pricing-button">
-          <button class="price">150Euronen</button>
+          <button class="price">150 Euronen</button>
         </div>
     </div>
 
@@ -25,7 +25,7 @@
         <h3>Badehose</h3>
       </div>
       <div class="pricing-button">
-        <button class="price">200Euronen</button>
+        <button class="price">200 Euronen</button>
       </div>
     </div>
 
@@ -45,14 +45,14 @@
         <h3>Badehose</h3>
       </div>
       <div class="pricing-button">
-        <button class="price">500Euronen</button>
+        <button class="price">500 Euronen</button>
       </div>
     </div>
   </div>
 </div>
       
 
--->
+
   <div v-if="showLogin">
       <button
 
@@ -105,6 +105,7 @@ return{
   Register:false,
   enteredFirstName: "",
   enteredLastName: "",
+  hideProduct:true,
 
   email: "",
   };
@@ -130,12 +131,14 @@ methods:{
     );
       this.showShop =! this.showShop,
       this.Register =! this.Register
+      this.hideProduct =! this.hideProduct
       
   
   },
   Create(){
     this.showShop =! this.showShop
     this.Register =! this.Register
+    this.hideProduct =! this.hideProduct
    
   }
 }
@@ -153,17 +156,18 @@ methods:{
 .shop{
   display:flex;
   flex-direction: column !important;
-    justify-content: space-evenly !important;
-    align-items: center !important;
+  justify-content: space-evenly !important;
+  align-items: center !important;
   margin-left:10px;
+  text-align: center;
+  margin-top:-60px;  
    
 
 
 }
 
 .panel{
-  height:580px;
-  width:800px;
+
   margin:150px;
   display: flex;
   flex-direction: row !important;
@@ -181,24 +185,26 @@ methods:{
 }
 
 h3{
-  text-align: center;
+  text-align: left;
 }
 .product-name{
   margin-left: 150px;
   text-align: center;
+  position:relative;
 
 }
 
 .product1{
   border: 3px solid black;
   margin-right:100px;
-  text-align: center;
+  text-align: left;
   
 }
 
 .product2{
   border: 3px solid black;
   margin-right:100px;
+  text-align:center;
 }
 
 .product3{

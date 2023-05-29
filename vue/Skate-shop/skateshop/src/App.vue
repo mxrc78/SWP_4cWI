@@ -1,6 +1,6 @@
 <template>
 <section>
-<new-order  @add-order = "addOrder"></new-order>
+<new-order @add-order = "addOrder"></new-order>
 <ul>
   <my-customers
   v-bind:key="customer"
