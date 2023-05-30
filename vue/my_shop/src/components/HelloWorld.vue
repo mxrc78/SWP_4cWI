@@ -1,345 +1,546 @@
 <template>
-    <form @submit.prevent>
-      <head>
-       
-</head>
-      <body>
-  <h1>MAKKE Clothing</h1>
+  <form @submit.prevent>
+    <head> </head>
+    <body>
+      <div class="shop" v-if="hideProduct">
+        <h1>MAKKE Clothing</h1>
+        <div class="bottoms" v-if="showBottoms">
+          <div class="products">
+            <img class="imgs" src=../assets/hose.png>
+            <h3 class="product-name">Lederhose</h3>
+            <div class="size-selection">
+              <label for="size">Size: </label>
+              <select v-model="selectedSize">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+              </select>
+            </div>
 
-
-<div class="shop" v-if="hideProduct">
-  <div class="panel">
-    <div class="product1">
-        <div class ="imggg"><img src=../assets/hose.png>/></div>
-        <div class="product-name">
-          <h3>Lederhose</h3>
-        </div>
-        <div class="pricing-button">
-          <button class="price">150 Euronen</button>
-        </div>
-    </div>
-
-    <div class="product2">
-      <div class ="imggg"><img src=../assets/Badehose.png>/></div>
-      <div class="product-name">
-        <h3>Badehose</h3>
-      </div>
-      <div class="pricing-button">
-        <button class="price">200 Euronen</button>
-      </div>
-    </div>
-
-    <div class="product3">
-      <div class ="imggg"><img src=../assets/Elf.png>/></div>
-      <div class="product-name">
-        <h3>Badehose</h3>
-      </div>
-      <div class="pricing-button">
-        <button class="price">unbezahlbar</button>
-      </div>
-    </div>
-
-    <div class="product4">
-      <div class ="imggg"><img src=../assets/Pyjama.png>/></div>
-      <div class="product-name">
-        <h3>Badehose</h3>
-      </div>
-      <div class="pricing-button">
-        <button class="price">500 Euronen</button>
-      </div>
-    </div>
-  </div>
-</div>
-      
-
-
-  <div v-if="showLogin">
-      <button
-
-       
-              @click="
-                testPassword()
-              "
-
-              class="Login"
+            <div class="amount-selection">
+              <label for="amount">Menge: </label>
+              <select v-model="selectedAmount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            <button
+              @click="hideProducts($event.target.parentElement)"
+              class="price"
             >
-              Login
+              150 Euronen
             </button>
+          </div>
 
-      <input type="text" v-model="enteredPassword"/>
-    </div>
+          <div class="products">
+            <img class="imgs" src=../assets/Badehose.png>
+            <h3 class="product-name">Badehose</h3>
+            <div class="size-selection">
+              <label for="size">Size: </label>
+              <select v-model="selectedSize">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+              </select>
+            </div>
+
+            <div class="amount-selection">
+              <label for="amount">Menge: </label>
+              <select v-model="selectedAmount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            <button
+              @click="hideProducts($event.target.parentElement)"
+              class="price"
+            >
+              80 Euronen
+            </button>
+          </div>
+
+          <div class="products">
+            <img class="imgs" src=../assets/dior.png>
+            <h3 class="product-name">Polar Jort</h3>
+            <div class="size-selection">
+              <label for="size">Size: </label>
+              <select v-model="selectedSize">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+              </select>
+            </div>
+
+            <div class="amount-selection">
+              <label for="amount">Menge: </label>
+              <select v-model="selectedAmount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            <button
+              @click="hideProducts($event.target.parentElement)"
+              class="price"
+            >
+              unbezahlbar
+            </button>
+          </div>
+
+          <div class="products">
+            <img class="imgs" src=../assets/Pyjama.png>
+            <h3 class="product-name">Pyjama</h3>
+            <div class="size-selection">
+              <label for="size">Size: </label>
+              <select v-model="selectedSize">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+              </select>
+            </div>
+
+            <div class="amount-selection">
+              <label for="amount">Menge: </label>
+              <select v-model="selectedAmount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            <button
+              @click="hideProducts($event.target.parentElement)"
+              class="price"
+            >
+              200 Euronen
+            </button>
+          </div>
+        </div>
+        <div class="tops" v-if="showTops">
+          <div class="products">
+            <img class="imgs" src=../assets/stussy.png>
+            <h3 class="product-name">Stüssy Tshirt</h3>
+            <div class="size-selection">
+              <label for="size">Size: </label>
+              <select v-model="selectedSize">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+              </select>
+            </div>
+
+            <div class="amount-selection">
+              <label for="amount">Menge: </label>
+              <select v-model="selectedAmount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            <button
+              @click="hideProducts($event.target.parentElement)"
+              class="price"
+            >
+              40 Euronen
+            </button>
+          </div>
+
+          <div class="products">
+            <img class="imgs" src=../assets/99based.jpg>
+            <h3 class="product-name">99 Based Tshirt</h3>
+            <div class="size-selection">
+              <label for="size">Size: </label>
+              <select v-model="selectedSize">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+              </select>
+            </div>
+
+            <div class="amount-selection">
+              <label for="amount">Menge: </label>
+              <select v-model="selectedAmount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            <button
+              @click="hideProducts($event.target.parentElement)"
+              class="price"
+            >
+              50 Euronen
+            </button>
+          </div>
+
+          <div class="products">
+            <img class="imgs" src=../assets/basic.png>
+            <h3 class="product-name">Basic Tshirt</h3>
+            <div class="size-selection">
+              <label for="size">Size: </label>
+              <select v-model="selectedSize">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+              </select>
+            </div>
+
+            <div class="amount-selection">
+              <label for="amount">Menge: </label>
+              <select v-model="selectedAmount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            <button
+              @click="hideProducts($event.target.parentElement)"
+              class="price"
+            >
+              20 Euronen
+            </button>
+          </div>
+
+          <div class="products">
+            <img class="imgs" src=../assets/zipper.png>
+            <h3 class="product-name">99 Based Zipper</h3>
+            <div class="size-selection">
+              <label for="size">Size: </label>
+              <select v-model="selectedSize">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+              </select>
+            </div>
+
+            <div class="amount-selection">
+              <label for="amount">Menge: </label>
+              <select v-model="selectedAmount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            <button
+              @click="hideProducts($event.target.parentElement)"
+              class="price"
+            >
+              70 Euronen
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div v-if="showLogin">
+        <button @click="testPassword()" class="Login">Login</button>
+        <input type="text" v-model="enteredPassword" />
+      </div>
+
+      <div class="Create_Account" v-if="Register">
+        <input
+          class="First_Name"
+          v-model="enteredFirstName"
+          type="First_Name"
+          placeholder="First Name"
+        />
+        <input
+          class="Last_Name"
+          v-model="enteredLastName"
+          type="Last_Name"
+          placeholder="Last Name"
+        />
+        <input
+          class="Address"
+          v-model="address"
+          type="Address"
+          placeholder="Address"
+        />
+        <input
+          class="email"
+          v-model="email"
+          type="emailAdress"
+          placeholder="e-Mail"
+        />
+        <input
+          class="password"
+          v-model="password"
+          type="Passwort"
+          placeholder="Password"
+        />
+        <button @click="CreateAccount()" class="Submit">Create Account</button>
+      </div>
+
+      <div class="navBar" v-if="showShop">
+        <button @click="showAll" class="All">Shop All</button>
+        <button @click="showBottom" class="buttonShop">Bottoms</button>
+        <button @click="showTop" class="buttonShop">Tops</button>
+        <button class="d">Shopping cart</button>
+        <button class="Home">Home</button>
+        <button @click="showAboutt" class="About">About us</button>
+        <button @click="Create()" class="register">Register Account</button>
+      </div>
+
+      <!--
+<div class ="about" v-if="showAboutt">
+<h2> Über uns</h2>
+<p> ICH BIN BERKE</p>
+<p> Ich BIn MARC</p>
 
 
-
-<div class ="Create_Account" v-if="Register">
-  <input class ="First_Name" v-model="enteredFirstName" type ="First_Name" placeholder="First Name">
-  <input  class ="Last_Name" v-model="enteredLastName" type ="Last_Name" placeholder="Last Name">
-  <input class ="Address" v-model="address" type ="Address" placeholder="Address">
-  <input  class ="email" v-model="email" type ="emailAdress" placeholder="e-Mail">
-  <input  class ="password" v-model="password" type ="Passwort" placeholder="Password">
-  <button @click="CreateAccount()" class ="Submit" >Create Account</button>
 </div>
-
-<div class ="navBar" v-if="showShop">
-  <button class ="All">Shop All</button>
-  <button class="d">Shopping cart</button>
-  <button class ="Home">Home</button>
-  <button class ="About">About us</button>
-  <button @click="Create()" class ="register">Register Account</button>
-</div>
-
-</body>
-</form>
+-->
+    </body>
+  </form>
 </template>
 
 <script>
-export default{
-
-  emits:["add-order"],
-
-data(){
-return{
-  password: "",
-  address: "",
-  showShop:true,
-  Register:false,
-  enteredFirstName: "",
-  enteredLastName: "",
-  hideProduct:true,
-
-  email: "",
-  };
-},
-
-methods:{
-  testPassword(){
-    // eslint-disable-next-line no-cond-assign, no-self-assign
-    if (this.enteredPassword ==this.password) {
-    this.showShop = !this.showShop
-    this.showLogin = !this.showLogin
-  }else
-    alert("Falsch")
+export default {
+  emits: ["add-order"],
+  data() {
+    return {
+      selectedSize: "",
+      password: "",
+      address: "",
+      showShop: true,
+      showBottoms: true,
+      showTops: true,
+      Register: false,
+      enteredFirstName: "",
+      enteredLastName: "",
+      hideProduct: true,
+      email: "",
+      showAbout: false,
+      showSelection: false,
+    };
   },
-  CreateAccount(){
+  methods: {
+    testPassword() {
+      // eslint-disable-next-line no-cond-assign, no-self-assign
+      if (this.enteredPassword == this.password) {
+        this.showShop = !this.showShop;
+        this.showLogin = !this.showLogin;
+      } else alert("Falsch");
+    },
+
+    showBottom() {
+      this.showTops = false;
+      this.showBottoms = true;
+    },
+
+    hideProducts(clickedProduct) {
+      const products = document.getElementsByClassName("products");
+      for (let i = 0; i < products.length; i++) {
+        if (products[i].contains(clickedProduct)) {
+          products[i].style.display = "block";
+        } else {
+          products[i].style.display = "none";
+        }
+      }
+
+      this.showSelection != this.showSelection;
+    },
+  },
+
+  showTop() {
+    this.showBottoms = false;
+    this.showTops = true;
+  },
+
+  showAll() {
+    this.showBottoms = true;
+    this.showTops = true;
+  },
+
+  showAboutt() {
+    this.showAbout != this.showAbout;
+  },
+
+  CreateAccount() {
     this.$emit(
       "add-order",
       this.enteredFirstName,
       this.enteredLastName,
       this.password,
       this.address,
-      this.email,
+      this.selectedSize,
+      this.email
     );
-      this.showShop =! this.showShop,
-      this.Register =! this.Register
-      this.hideProduct =! this.hideProduct
-      
-  
+    (this.showShop = !this.showShop), (this.Register = !this.Register);
+    this.hideProduct = !this.hideProduct;
   },
-  Create(){
-    this.showShop =! this.showShop
-    this.Register =! this.Register
-    this.hideProduct =! this.hideProduct
-   
-  }
-}
-}
+  Create() {
+    this.showShop = !this.showShop;
+    this.Register = !this.Register;
+    this.hideProduct = !this.hideProduct;
+  },
+};
 </script>
 
-<style>  
-.pricing-button{
-  width:130px;
-  height:100px;
-  margin-top:450px;
-  margin-left:10px;
+<style>
+.pricing-button {
+  width: 130px;
+  height: 100px;
+  margin-top: 450px;
+  margin-left: 10px;
 }
-
-.shop{
-  display:flex;
+.shop {
+  display: flex;
   flex-direction: column !important;
   justify-content: space-evenly !important;
   align-items: center !important;
-  margin-left:10px;
+  margin-left: 10px;
   text-align: center;
-  margin-top:-60px;  
-   
-
-
+  margin-top: -60px;
 }
-
-.panel{
-
-  margin:150px;
+.bottoms,
+.tops {
+  margin-top: 150px;
   display: flex;
   flex-direction: row !important;
   justify-content: space-evenly !important;
   text-align: center;
-
 }
-
-.price{
-  font-size:20px;
-  width:200px;
-  border:2px solid black;
+.price {
+  font-size: 13px;
+  width: 110px;
+  height: 50px;
+  border: 1px solid black;
   border-radius: 10px;
-  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
 }
-
-h3{
-  text-align: left;
-}
-.product-name{
-  margin-left: 150px;
+.product-name {
   text-align: center;
-  position:relative;
-
 }
-
-.product1{
+.products {
   border: 3px solid black;
-  margin-right:100px;
-  text-align: left;
-  
+  margin-right: 100px;
+  width: 200px;
+  height: 390px;
+  margin-top:-45px;
 }
-
-.product2{
-  border: 3px solid black;
-  margin-right:100px;
-  text-align:center;
+.imgs {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-.product3{
-  border: 3px solid black;
-  margin-right:100px;
-}
-
-.product4{
-  border: 3px solid black;
-  margin-right:100px;
-}
-
-.imggg{
-  position:absolute;
-  padding:50px;
-  margin-top:50px;
- 
-}
-
-.First_Name{
-margin-bottom: 10px;
-}
-
-.email{
-  margin-top:10px;
-  margin-bottom:10px;
-}
-
-body{
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.Address{
-  margin-top:10px;
-}
-
-img{
-  height:160px;
-  width:160px;
-  position: absolute;
-  
-}
-
-.logo{
-  width:200px;
-  height:200pxM
-}
-.hose1{
-  position:absolute;
-  top:100px;
-}
-
-.profil{
-  width: 80px;
-  height:80px;
-  display:flex;
-  align-items: center;
- right:100px;
-}
-
-.Submit{
-  height:50px;
-  width:100px;
-  border: 1.6px solid black;
-}
-
-.password{
+.First_Name {
   margin-bottom: 10px;
 }
-
-.Create_Account{
+.email {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.Address {
+  margin-top: 10px;
+}
+img {
+  height: 160px;
+  width: auto;
+  position: relative;
+  margin-left: 3rem;
+}
+.logo {
+  width: 200px;
+  height: 200px;
+}
+.hose1 {
+  position: absolute;
+  top: 100px;
+}
+.profil {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  right: 100px;
+}
+.Submit {
+  height: 50px;
+  width: 100px;
+  border: 1.6px solid black;
+}
+.password {
+  margin-bottom: 10px;
+}
+.Create_Account {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top:20px;
-
+  margin-top: 20px;
 }
-
-.header{
-  display:flex;
+.header {
+  display: flex;
   justify-content: center;
   flex-direction: column;
-  position:relative;
+  position: relative;
+}
+.profilee {
+  height: 100px;
+  width: 100px;
+  right: -3000px;
+  top: 100px;
+}
+.selection {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 20px;
+  justify-content: space-between;
 }
 
-.profilee{
-  height:100px;
-  width:100px;
-  right:-3000px;
-  top:100px;
-}
-
-button{
-  display:flex;
+button {
+  display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  align-items:center;
-  margin-left:10px;
-  width:70px;
-  height:70px;
+  align-items: center;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  width: 70px;
+  height: 70px;
   background-color: Transparent;
-  margin-top:10px;
-  border:none;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  margin-top: 10px;
+  border: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
-button:hover{
-  background-color:lightgray;
-  text-decoration:solid;
-  font-weight:bold;
-  color:darkslategray;
+button:hover {
+  background-color: lightgray;
+  text-decoration: solid;
+  font-weight: bold;
+  color: darkslategray;
 }
-
-input{
+input {
   height: 30px;
-  width:150px;
+  width: 150px;
 }
-
-.navBar{
-  font-family: 'Didact Gothic';
-  display:flex;
-  align-items:center ;
+.navBar {
+  position: fixed;
+  font-family: "Didact Gothic";
+  display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: flex-end;
   text-decoration: none;
-  position:absolute;
+  position: absolute;
   margin-top: 10px;
-  padding-right:20px;
+  padding-right: 20px;
   border-right: 1.5px solid black;
-  top:20%;
+  top: 20%;
 }
-
-h1{
+h1 {
   align-items: center;
-  display:flex;
+  display: flex;
+  justify-content: center;
+  margin-top:1px;
+
+}
+h3 {
+  align-items: center;
+  display: flex;
   justify-content: center;
 }
 </style>
