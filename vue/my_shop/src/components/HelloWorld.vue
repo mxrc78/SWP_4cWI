@@ -23,6 +23,14 @@
                 <option value="L">L</option>
               </select>
             </div>
+            <div class="amount" v-if="showAmount">
+              <label for="amount">Menge:</label>
+              <select v-model="selectedAmount" id="amount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
           </div>
 
           <div class="products">
@@ -41,6 +49,15 @@
                 <option value="S">S</option>
                 <option value="M">M</option>
                 <option value="L">L</option>
+              </select>
+            </div>
+
+            <div class="amount" v-if="showAmount">
+              <label for="amount">Menge:</label>
+              <select v-model="selectedAmount" id="amount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
               </select>
             </div>
           </div>
@@ -93,6 +110,7 @@
                 <option value="L">L</option>
               </select>
             </div>
+
           </div>
         </div>
         <div class="tops" v-if="showTops">
@@ -112,6 +130,14 @@
                 <option value="S">S</option>
                 <option value="M">M</option>
                 <option value="L">L</option>
+              </select>
+            </div>
+            <div class="amount" v-if="showAmount">
+              <label for="amount">Menge:</label>
+              <select v-model="selectedAmount" id="amount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
               </select>
             </div>
           </div>
@@ -134,6 +160,14 @@
                 <option value="L">L</option>
               </select>
             </div>
+            <div class="amount" v-if="showAmount">
+              <label for="amount">Menge:</label>
+              <select v-model="selectedAmount" id="amount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
           </div>
 
           <div class="products">
@@ -154,6 +188,14 @@
                 <option value="L">L</option>
               </select>
             </div>
+            <div class="amount" v-if="showAmount">
+              <label for="amount">Menge:</label>
+              <select v-model="selectedAmount" id="amount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
           </div>
 
           <div class="products">
@@ -172,6 +214,14 @@
                 <option value="S">S</option>
                 <option value="M">M</option>
                 <option value="L">L</option>
+              </select>
+            </div>
+            <div class="amount" v-if="showAmount">
+              <label for="amount">Menge:</label>
+              <select v-model="selectedAmount" id="amount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
               </select>
             </div>
           </div>
