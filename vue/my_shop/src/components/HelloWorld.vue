@@ -8,226 +8,172 @@
           <div class="products">
             <img class="imgs" src=../assets/hose.png>
             <h3 class="product-name">Lederhose</h3>
-            <div class="size-selection">
-              <label for="size">Size: </label>
-              <select v-model="selectedSize">
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-              </select>
-            </div>
 
-            <div class="amount-selection">
-              <label for="amount">Menge: </label>
-              <select v-model="selectedAmount">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </div>
             <button
               @click="hideProducts($event.target.parentElement)"
               class="price"
             >
               150 Euronen
             </button>
-          </div>
-
-          <div class="products">
-            <img class="imgs" src=../assets/Badehose.png>
-            <h3 class="product-name">Badehose</h3>
-            <div class="size-selection">
-              <label for="size">Size: </label>
-              <select v-model="selectedSize">
+            <div class="selection" v-if="showSelection">
+              <label for="size">Größe:</label>
+              <select v-model="selectedSize" id="size">
                 <option value="S">S</option>
                 <option value="M">M</option>
                 <option value="L">L</option>
               </select>
             </div>
+          </div>
 
-            <div class="amount-selection">
-              <label for="amount">Menge: </label>
-              <select v-model="selectedAmount">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </div>
+          <div class="products">
+            <img class="imgs" src=../assets/Badehose.png>
+            <h3 class="product-name">Badehose</h3>
+
             <button
               @click="hideProducts($event.target.parentElement)"
               class="price"
             >
               80 Euronen
             </button>
-          </div>
-
-          <div class="products">
-            <img class="imgs" src=../assets/dior.png>
-            <h3 class="product-name">Polar Jort</h3>
-            <div class="size-selection">
-              <label for="size">Size: </label>
-              <select v-model="selectedSize">
+            <div class="selection" v-if="showSelection">
+              <label for="size">Größe:</label>
+              <select v-model="selectedSize" id="size">
                 <option value="S">S</option>
                 <option value="M">M</option>
                 <option value="L">L</option>
               </select>
             </div>
+          </div>
 
-            <div class="amount-selection">
-              <label for="amount">Menge: </label>
-              <select v-model="selectedAmount">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </div>
+          <div class="products">
+            <img class="imgs" src=../assets/dior.png>
+            <h3 class="product-name">Polar Jort</h3>
+
             <button
               @click="hideProducts($event.target.parentElement)"
               class="price"
             >
               unbezahlbar
             </button>
-          </div>
-
-          <div class="products">
-            <img class="imgs" src=../assets/Pyjama.png>
-            <h3 class="product-name">Pyjama</h3>
-            <div class="size-selection">
-              <label for="size">Size: </label>
-              <select v-model="selectedSize">
+            <div class="selection" v-if="showSelection">
+              <label for="size">Größe:</label>
+              <select v-model="selectedSize" id="size">
                 <option value="S">S</option>
                 <option value="M">M</option>
                 <option value="L">L</option>
               </select>
             </div>
 
-            <div class="amount-selection">
-              <label for="amount">Menge: </label>
-              <select v-model="selectedAmount">
+            <div class="amount" v-if="showAmount">
+              <label for="amount">Menge:</label>
+              <select v-model="selectedAmount" id="amount">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
               </select>
             </div>
+
+          </div>
+
+          <div class="products">
+            <img class="imgs" src=../assets/Pyjama.png>
+            <h3 class="product-name">Pyjama</h3>
+
             <button
               @click="hideProducts($event.target.parentElement)"
               class="price"
             >
               200 Euronen
             </button>
+            <div class="selection" v-if="showSelection">
+              <label for="size">Größe:</label>
+              <select v-model="selectedSize" id="size">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+              </select>
+            </div>
           </div>
         </div>
         <div class="tops" v-if="showTops">
           <div class="products">
             <img class="imgs" src=../assets/stussy.png>
             <h3 class="product-name">Stüssy Tshirt</h3>
-            <div class="size-selection">
-              <label for="size">Size: </label>
-              <select v-model="selectedSize">
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-              </select>
-            </div>
 
-            <div class="amount-selection">
-              <label for="amount">Menge: </label>
-              <select v-model="selectedAmount">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </div>
             <button
               @click="hideProducts($event.target.parentElement)"
               class="price"
             >
               40 Euronen
             </button>
-          </div>
-
-          <div class="products">
-            <img class="imgs" src=../assets/99based.jpg>
-            <h3 class="product-name">99 Based Tshirt</h3>
-            <div class="size-selection">
-              <label for="size">Size: </label>
-              <select v-model="selectedSize">
+            <div class="selection" v-if="showSelection">
+              <label for="size">Größe:</label>
+              <select v-model="selectedSize" id="size">
                 <option value="S">S</option>
                 <option value="M">M</option>
                 <option value="L">L</option>
               </select>
             </div>
+          </div>
 
-            <div class="amount-selection">
-              <label for="amount">Menge: </label>
-              <select v-model="selectedAmount">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </div>
+          <div class="products">
+            <img class="imgs" src=../assets/99based.jpg>
+            <h3 class="product-name">99 Based Tshirt</h3>
+
             <button
               @click="hideProducts($event.target.parentElement)"
               class="price"
             >
               50 Euronen
             </button>
-          </div>
-
-          <div class="products">
-            <img class="imgs" src=../assets/basic.png>
-            <h3 class="product-name">Basic Tshirt</h3>
-            <div class="size-selection">
-              <label for="size">Size: </label>
-              <select v-model="selectedSize">
+            <div class="selection" v-if="showSelection">
+              <label for="size">Größe:</label>
+              <select v-model="selectedSize" id="size">
                 <option value="S">S</option>
                 <option value="M">M</option>
                 <option value="L">L</option>
               </select>
             </div>
+          </div>
 
-            <div class="amount-selection">
-              <label for="amount">Menge: </label>
-              <select v-model="selectedAmount">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </div>
+          <div class="products">
+            <img class="imgs" src=../assets/basic.png>
+            <h3 class="product-name">Basic Tshirt</h3>
+
             <button
               @click="hideProducts($event.target.parentElement)"
               class="price"
             >
               20 Euronen
             </button>
-          </div>
-
-          <div class="products">
-            <img class="imgs" src=../assets/zipper.png>
-            <h3 class="product-name">99 Based Zipper</h3>
-            <div class="size-selection">
-              <label for="size">Size: </label>
-              <select v-model="selectedSize">
+            <div class="selection" v-if="showSelection">
+              <label for="size">Größe:</label>
+              <select v-model="selectedSize" id="size">
                 <option value="S">S</option>
                 <option value="M">M</option>
                 <option value="L">L</option>
               </select>
             </div>
+          </div>
 
-            <div class="amount-selection">
-              <label for="amount">Menge: </label>
-              <select v-model="selectedAmount">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </div>
+          <div class="products">
+            <img class="imgs" src=../assets/zipper.png>
+            <h3 class="product-name">99 Based Zipper</h3>
+
             <button
               @click="hideProducts($event.target.parentElement)"
               class="price"
             >
               70 Euronen
             </button>
+            <div class="selection" v-if="showSelection">
+              <label for="size">Größe:</label>
+              <select v-model="selectedSize" id="size">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
@@ -312,6 +258,7 @@ export default {
       email: "",
       showAbout: false,
       showSelection: false,
+      selectedAmount:"",
     };
   },
   methods: {
@@ -338,7 +285,9 @@ export default {
         }
       }
 
-      this.showSelection != this.showSelection;
+      this.showSelection = true; // Größenauswahl anzeigen
+      this.showAmount =true;
+      
     },
   },
 
@@ -419,7 +368,7 @@ export default {
   margin-right: 100px;
   width: 200px;
   height: 390px;
-  margin-top:-45px;
+  margin-top: -45px;
 }
 .imgs {
   margin-top: 10px;
@@ -535,8 +484,7 @@ h1 {
   align-items: center;
   display: flex;
   justify-content: center;
-  margin-top:1px;
-
+  margin-top: 1px;
 }
 h3 {
   align-items: center;
