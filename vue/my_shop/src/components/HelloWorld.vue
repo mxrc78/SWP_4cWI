@@ -2,8 +2,6 @@
   <form @submit.prevent>
     <head> </head>
     <body>
-      
-     
       <div class="shop" v-if="hideProduct">
         <h1>MAKKE Clothing</h1>
         <div class="bottoms" v-if="showBottoms">
@@ -91,7 +89,6 @@
                 <option value="3">3</option>
               </select>
             </div>
-
           </div>
 
           <div class="products">
@@ -112,7 +109,6 @@
                 <option value="L">L</option>
               </select>
             </div>
-
           </div>
         </div>
         <div class="tops" v-if="showTops">
@@ -273,19 +269,19 @@
         <button @click="showAll" class="All">Shop All</button>
         <button @click="showBottom" class="buttonShop">Bottoms</button>
         <button @click="showTop" class="buttonShop">Tops</button>
-        <button class="d">Shopping cart</button>
         <button class="Home">Home</button>
-        <button @click="showAboutt" class="About">About us</button>
+        <button @click="popo()" class="About">About us</button>
         <button @click="Create()" class="register">Register Account</button>
       </div>
 
-      <!--
-<div class ="about" v-if="showAboutt">
+
+<div class ="about" v-if="showAbout">
 <h2> Über uns</h2>
 <p> ICH BIN BERKE</p>
 <p> Ich BIn MARC</p>
+
 </div>
--->
+
     </body>
   </form>
 </template>
@@ -309,6 +305,7 @@ export default {
       showAbout: false,
       showSelection: false,
       selectedAmount: "",
+      showAboutt:false,
     };
   },
   methods: {
@@ -322,6 +319,7 @@ export default {
     showBottom() {
       this.showTops = false;
       this.showBottoms = true;
+      this.showAbout = false;
     },
     hideProducts(clickedProduct) {
       const products = document.getElementsByClassName("products");
@@ -338,14 +336,21 @@ export default {
     showTop() {
       this.showBottoms = false;
       this.showTops = true;
+      this.showAbout = false;
     },
     showAll() {
       this.showBottoms = true;
       this.showTops = true;
+      this.showAbout = false;
     },
-    showAboutt() {
-      this.showAbout = !this.showAbout;
-    },
+
+  popo(){
+    this.showAbout = true;
+    this.showTops = false;
+    this.showBottoms = false;
+  },
+
+    
     CreateAccount() {
       this.$emit(
         "add-order",
@@ -412,6 +417,11 @@ export default {
   width: 200px;
   height: 390px;
   margin-top: -45px;
+}
+
+.marc{
+  height:200px;
+  width:200px;
 }
 .imgs {
   margin-top: 10px;
@@ -499,7 +509,7 @@ button {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 button:hover {
-  background-color: lightgray;
+  background-color: rgb(118, 118, 118);
   text-decoration: solid;
   font-weight: bold;
   color: darkslategray;
@@ -521,6 +531,7 @@ input {
   padding-right: 20px;
   border-right: 1.5px solid black;
   top: 20%;
+  background-color: rgb(214, 211, 211);
 }
 h1 {
   align-items: center;
