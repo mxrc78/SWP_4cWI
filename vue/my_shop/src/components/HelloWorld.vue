@@ -279,6 +279,10 @@
 <h2> Über uns</h2>
 <p> ICH BIN BERKE</p>
 <p> Ich BIn MARC</p>
+<div class ="marke"></div>
+<img class ="marc" src="../assets/marc.png">
+<img class ="berke" src="../assets/berke.png">
+
 
 </div>
 
@@ -398,6 +402,21 @@ export default {
   justify-content: space-evenly !important;
   text-align: center;
 }
+
+.marc{
+  height:500px;
+  width:700px;
+  
+}
+.berke{
+  height:500px;
+  width:500px;
+}
+.makke{
+  display:flex;
+  margin-left:100px;
+ 
+}
 .price {
   font-size: 13px;
   width: 110px;
@@ -419,10 +438,7 @@ export default {
   margin-top: -45px;
 }
 
-.marc{
-  height:200px;
-  width:200px;
-}
+
 .imgs {
   margin-top: 10px;
   margin-left: auto;
@@ -530,6 +546,7 @@ input {
   margin-top: 10px;
   padding-right: 20px;
   border-right: 1.5px solid black;
+  border-bottom: 1.5px solid black;
   top: 20%;
   background-color: rgb(214, 211, 211);
 }
