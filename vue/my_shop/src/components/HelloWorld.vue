@@ -2,6 +2,8 @@
   <form @submit.prevent>
     <head> </head>
     <body>
+      
+     
       <div class="shop" v-if="hideProduct">
         <h1>MAKKE Clothing</h1>
         <div class="bottoms" v-if="showBottoms">
@@ -282,8 +284,6 @@
 <h2> Über uns</h2>
 <p> ICH BIN BERKE</p>
 <p> Ich BIn MARC</p>
-
-
 </div>
 -->
     </body>
@@ -308,7 +308,7 @@ export default {
       email: "",
       showAbout: false,
       showSelection: false,
-      selectedAmount:"",
+      selectedAmount: "",
     };
   },
   methods: {
@@ -319,12 +319,10 @@ export default {
         this.showLogin = !this.showLogin;
       } else alert("Falsch");
     },
-
     showBottom() {
       this.showTops = false;
       this.showBottoms = true;
     },
-
     hideProducts(clickedProduct) {
       const products = document.getElementsByClassName("products");
       for (let i = 0; i < products.length; i++) {
@@ -334,44 +332,39 @@ export default {
           products[i].style.display = "none";
         }
       }
-
       this.showSelection = true; // Größenauswahl anzeigen
-      this.showAmount =true;
-      
+      this.showAmount = true;
     },
-  },
-
-  showTop() {
-    this.showBottoms = false;
-    this.showTops = true;
-  },
-
-  showAll() {
-    this.showBottoms = true;
-    this.showTops = true;
-  },
-
-  showAboutt() {
-    this.showAbout != this.showAbout;
-  },
-
-  CreateAccount() {
-    this.$emit(
-      "add-order",
-      this.enteredFirstName,
-      this.enteredLastName,
-      this.password,
-      this.address,
-      this.selectedSize,
-      this.email
-    );
-    (this.showShop = !this.showShop), (this.Register = !this.Register);
-    this.hideProduct = !this.hideProduct;
-  },
-  Create() {
-    this.showShop = !this.showShop;
-    this.Register = !this.Register;
-    this.hideProduct = !this.hideProduct;
+    showTop() {
+      this.showBottoms = false;
+      this.showTops = true;
+    },
+    showAll() {
+      this.showBottoms = true;
+      this.showTops = true;
+    },
+    showAboutt() {
+      this.showAbout = !this.showAbout;
+    },
+    CreateAccount() {
+      this.$emit(
+        "add-order",
+        this.enteredFirstName,
+        this.enteredLastName,
+        this.password,
+        this.address,
+        this.selectedSize,
+        this.email
+      );
+      this.showShop = !this.showShop;
+      this.Register = !this.Register;
+      this.hideProduct = !this.hideProduct;
+    },
+    Create() {
+      this.showShop = !this.showShop;
+      this.Register = !this.Register;
+      this.hideProduct = !this.hideProduct;
+    },
   },
 };
 </script>
@@ -491,7 +484,6 @@ img {
   margin-left: 20px;
   justify-content: space-between;
 }
-
 button {
   display: flex;
   flex-direction: row;
