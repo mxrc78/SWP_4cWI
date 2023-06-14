@@ -18,7 +18,7 @@ export default {
   },
   methods:{
   addOrder(address, email, enteredFirstName, enteredLastName, password  ){
-    
+      
     fetch(
       "https://semi-a0885-default-rtdb.europe-west1.firebasedatabase.app/order.json",
        //export the Data to Firebase

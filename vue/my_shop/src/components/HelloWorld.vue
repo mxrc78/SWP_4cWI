@@ -2,8 +2,45 @@
   <form @submit.prevent>
     <head> </head>
     <body>
+      <h1>MAKKE Clothing</h1>
+      <div class="confirm" v-if="showConfirm">
+              <input
+          class="Adresse"
+          v-model="address"
+          type="Adresse"
+          placeholder="Adresse"
+        />
+        <input
+         v-model="plz"
+         placeholder="PLZ"
+         />
+
+         <input
+         v-model="ort"
+         placeholder="Ort"
+         />
+
+         <input
+         v-model="stair"
+         placeholder="Stiege (optional)"
+         />
+
+         <button class ="final" @click="endOrder()" >Zahlungspflichtig bestellen</button>
+
+        </div>
+
+
+        <div class="end" v-if="showEnd">
+        
+        <h3> Danke für Bestellung</h3>
+        <h3> Ihr Produkt wird in 7 Tagen unter folgender Adresse ankommen</h3>
+        <p> Adresse: {{ address }}</p>
+        <p> Postleitzahl : {{ plz }}</p>
+        <p> Ort : {{ ort }}</p>
+        <p> Stiege : {{stair}}</p>
+        </div>
+
       <div class="shop" v-if="hideProduct">
-        <h1>MAKKE Clothing</h1>
         <div class="bottoms" v-if="showBottoms">
           <div class="products">
             <img class="imgs" src=../assets/hose.png>
@@ -15,6 +52,7 @@
             >
               150 Euronen
             </button>
+
             <div class="selection" v-if="showSelection">
               <label for="size">Größe:</label>
               <select v-model="selectedSize" id="size">
@@ -23,6 +61,7 @@
                 <option value="L">L</option>
               </select>
             </div>
+
             <div class="amount" v-if="showAmount">
               <label for="amount">Menge:</label>
               <select v-model="selectedAmount" id="amount">
@@ -30,12 +69,23 @@
                 <option value="2">2</option>
                 <option value="3">3</option>
               </select>
+              <button
+                v-if="showOrderButton"
+                @click="placeOrder"
+                class="order-button"
+              >
+                Bestellen
+              </button>
             </div>
+            
           </div>
+
+          
 
           <div class="products">
             <img class="imgs" src=../assets/Badehose.png>
             <h3 class="product-name">Badehose</h3>
+            
 
             <button
               @click="hideProducts($event.target.parentElement)"
@@ -59,8 +109,20 @@
                 <option value="2">2</option>
                 <option value="3">3</option>
               </select>
+              <button
+                v-if="showOrderButton"
+                @click="placeOrder"
+                class="order-button"
+              >
+                Bestellen
+              </button>
+            
+              
             </div>
+          
           </div>
+
+          
 
           <div class="products">
             <img class="imgs" src=../assets/dior.png>
@@ -88,6 +150,13 @@
                 <option value="2">2</option>
                 <option value="3">3</option>
               </select>
+              <button
+                v-if="showOrderButton"
+                @click="placeOrder"
+                class="order-button"
+              >
+                Bestellen
+              </button>
             </div>
           </div>
 
@@ -124,7 +193,7 @@
             </button>
             <div class="selection" v-if="showSelection">
               <label for="size">Größe:</label>
-              <select v-model="selectedSize" id="size">
+              <select v-model="selectedSize" id="size" class="">
                 <option value="S">S</option>
                 <option value="M">M</option>
                 <option value="L">L</option>
@@ -137,6 +206,13 @@
                 <option value="2">2</option>
                 <option value="3">3</option>
               </select>
+              <button
+                v-if="showOrderButton"
+                @click="placeOrder"
+                class="order-button"
+              >
+                Bestellen
+              </button>
             </div>
           </div>
 
@@ -165,6 +241,13 @@
                 <option value="2">2</option>
                 <option value="3">3</option>
               </select>
+              <button
+                v-if="showOrderButton"
+                @click="placeOrder"
+                class="order-button"
+              >
+                Bestellen
+              </button>
             </div>
           </div>
 
@@ -193,6 +276,13 @@
                 <option value="2">2</option>
                 <option value="3">3</option>
               </select>
+              <button
+                v-if="showOrderButton"
+                @click="placeOrder"
+                class="order-button"
+              >
+                Bestellen
+              </button>
             </div>
           </div>
 
@@ -221,14 +311,17 @@
                 <option value="2">2</option>
                 <option value="3">3</option>
               </select>
+              <button
+                v-if="showOrderButton"
+                @click="placeOrder"
+                class="order-button"
+              >
+                Bestellen
+              </button>
+            
             </div>
           </div>
         </div>
-      </div>
-
-      <div v-if="showLogin">
-        <button @click="testPassword()" class="Login">Login</button>
-        <input type="text" v-model="enteredPassword" />
       </div>
 
       <div class="Create_Account" v-if="Register">
@@ -265,27 +358,30 @@
         <button @click="CreateAccount()" class="Submit">Create Account</button>
       </div>
 
-      <div class="navBar" v-if="showShop">
+      <div class="navBar">
         <button @click="showAll" class="All">Shop All</button>
         <button @click="showBottom" class="buttonShop">Bottoms</button>
         <button @click="showTop" class="buttonShop">Tops</button>
-        <button class="Home">Home</button>
-        <button @click="popo()" class="About">About us</button>
+        <button @click="showHomei" class="Home">Home</button>
+        <button @click="showAboutUs" class="About">About us</button>
         <button @click="Create()" class="register">Register Account</button>
       </div>
 
+      <div class="home" v-if="showHome">
+        <h2>Home</h2>
+        <p>
+          Slm bei Makke Clothing olmmmmm. Gönnt bisschen para. Hadi öptüm grsz.
+        </p>
+        <img class="logo" src="../assets/logo.png" />
+      </div>
 
-<div class ="about" v-if="showAbout">
-<h2> Über uns</h2>
-<p> ICH BIN BERKE</p>
-<p> Ich BIn MARC</p>
-<div class ="marke"></div>
-<img class ="marc" src="../assets/marc.png">
-<img class ="berke" src="../assets/berke.png">
-
-
-</div>
-
+      <div class="about" v-if="showAbout">
+        <h2>Über uns</h2>
+        <p>mrk bu ne</p>
+        <p>marcus</p>
+        <img class="marc" src="../assets/marc.png" />
+        <img class="berke" src="../assets/berke.png" />
+      </div>
     </body>
   </form>
 </template>
@@ -298,18 +394,26 @@ export default {
       selectedSize: "",
       password: "",
       address: "",
+      plz:"",
+      ort:"",
+      stair:"",
       showShop: true,
       showBottoms: true,
       showTops: true,
       Register: false,
       enteredFirstName: "",
+      Adresse:"",
       enteredLastName: "",
       hideProduct: true,
       email: "",
       showAbout: false,
+      showHome: false,
       showSelection: false,
       selectedAmount: "",
-      showAboutt:false,
+      showAboutt: false,
+      showOrderButton: false,
+      showConfirm: false,
+      showEnd:false,
     };
   },
   methods: {
@@ -319,11 +423,6 @@ export default {
         this.showShop = !this.showShop;
         this.showLogin = !this.showLogin;
       } else alert("Falsch");
-    },
-    showBottom() {
-      this.showTops = false;
-      this.showBottoms = true;
-      this.showAbout = false;
     },
     hideProducts(clickedProduct) {
       const products = document.getElementsByClassName("products");
@@ -336,25 +435,66 @@ export default {
       }
       this.showSelection = true; // Größenauswahl anzeigen
       this.showAmount = true;
+      this.showOrderButton = true;
     },
+    showBottom() {
+      this.showTops = false;
+      this.showBottoms = true;
+      this.showAbout = false;
+      this.showHome = false;
+      this.showShop = true;
+      this.Register = false;
+      this.hideProduct = true;
+    },
+
     showTop() {
       this.showBottoms = false;
       this.showTops = true;
       this.showAbout = false;
+      this.showHome = false;
+      this.showShop = true;
+      this.Register = false;
+      this.hideProduct = true;
     },
+
+    endOrder(){
+      this.showConfirm = false;
+      this.showEnd = true;
+    },
+
     showAll() {
       this.showBottoms = true;
       this.showTops = true;
       this.showAbout = false;
+      this.showShop = true;
+      this.showHome = false;
+      this.hideProduct = true;
+      this.Register = false;
+
     },
 
-  popo(){
-    this.showAbout = true;
-    this.showTops = false;
-    this.showBottoms = false;
-  },
+    placeOrder() {
+  
+      this.hideProduct = false;
+      this.showConfirm = true;
+    },
 
-    
+    showHomei() {
+      this.showAbout = false;
+      this.showTops = false;
+      this.showBottoms = false;
+      this.showHome = true;
+      this.hideProduct = true;
+      this.Register = false;
+    },
+    showAboutUs() {
+      this.showAbout = true;
+      this.showTops = false;
+      this.showBottoms = false;
+      this.showHome = false;
+      this.Register = false;
+    },
+
     CreateAccount() {
       this.$emit(
         "add-order",
@@ -365,14 +505,18 @@ export default {
         this.selectedSize,
         this.email
       );
-      this.showShop = !this.showShop;
-      this.Register = !this.Register;
-      this.hideProduct = !this.hideProduct;
+      this.showShop = true;
+      this.Register = false;
+      this.hideProduct = true;
+      this.showBottoms = true;
+      this.showTops = true;
     },
     Create() {
-      this.showShop = !this.showShop;
-      this.Register = !this.Register;
-      this.hideProduct = !this.hideProduct;
+      this.showShop = false;
+      this.Register = true;
+      this.hideProduct = false;
+      this.showAbout = false;
+      this.showHome = false;
     },
   },
 };
@@ -403,19 +547,17 @@ export default {
   text-align: center;
 }
 
-.marc{
-  height:500px;
-  width:700px;
-  
+.marc {
+  height: 500px;
+  width: 700px;
 }
-.berke{
-  height:500px;
-  width:500px;
+.berke {
+  height: 500px;
+  width: 500px;
 }
-.makke{
-  display:flex;
-  margin-left:100px;
- 
+.makke {
+  display: flex;
+  margin-left: 100px;
 }
 .price {
   font-size: 13px;
@@ -434,15 +576,20 @@ export default {
   border: 3px solid black;
   margin-right: 100px;
   width: 200px;
-  height: 390px;
+  height: 500px;
   margin-top: -45px;
 }
-
 
 .imgs {
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
+}
+.final{
+  margin-left:750px;
+  width:120px;
+  border:2px solid black;
+  margin-top:50px;
 }
 .First_Name {
   margin-bottom: 10px;
@@ -498,6 +645,12 @@ img {
   flex-direction: column;
   position: relative;
 }
+.about {
+  margin-top: 3rem;
+}
+.home {
+  margin-top: 3rem;
+}
 .profilee {
   height: 100px;
   width: 100px;
@@ -546,6 +699,7 @@ input {
   margin-top: 10px;
   padding-right: 20px;
   border-right: 1.5px solid black;
+  border: 1.5px solid black;
   border-bottom: 1.5px solid black;
   top: 20%;
   background-color: rgb(214, 211, 211);
